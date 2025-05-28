@@ -1,0 +1,17 @@
+.image-holder{
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container{
+    border: solid blue;
+    aspect-ratio: 1 / 1;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card-container:hover{
+    border: solid red;
+}
