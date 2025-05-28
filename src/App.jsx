@@ -8,11 +8,13 @@ function App() {
   const randomPokemonId = () => Math.round(Math.random() * (11 - 1) + 1); // This is the range of pokemon available. I want to make this dynamic.
   const [id, setId] = useState(randomPokemonId)
   const [numberOfCards, setNumberOfCards] = useState(6);
+  let [highScore, setHighScore] = useState(0)
 
   console.log("Current clickedPokemon state:", clickedPokemon);
 
   const handleLoss = (name) => {
     console.log(`${name} is already in here!`)
+    highScore<score ? setHighScore(score) : {}
     setScore(0)
     console.log(' score is 0')
     alert(`${name} was already clicked!`)
@@ -47,6 +49,7 @@ function App() {
       </div>
       <button className="reset" onClick={() => {setScore(0)}}>reset</button>
       <h2 className="score-holder">Score: {score}</h2>
+      <h2 className="score-holder">High Score: {highScore}</h2>
       <div className="card-holder">
         {Array.from({length:numberOfCards}, (_, index) => index).map((item) => (
            <PokemonCard handlePokemonCardClick={handlePokemonCardClick} key={item} id={randomPokemonId()}/>
